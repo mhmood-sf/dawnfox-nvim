@@ -52,42 +52,69 @@ end
 
 vim.g.colors_name = "dawnfox"
 
+-- Color palette
+
+-- S: 50, B: -10, T: 15
+local var = {
+    shade0  = "#ebe5df",
+    shade1  = "#faf4ed",
+    shade2  = "#ebe0df",
+    shade3  = "#ebdfe4",
+    shade4  = "#bdbfc9",
+    shade5  = "#625c87",
+    shade6  = "#575279",
+    shade7  = "#4c4769",
+    accent0 = "#D42850",
+    accent1 = "#E7554D",
+    accent2 = "#F2810F",
+    accent3 = "#3D925F",
+    accent4 = "#3D8EA0",
+    accent5 = "#245B78",
+    accent6 = "#E65292",
+    accent7 = "#8B40B3",
+    aux0    = "#d0d8d8",
+    aux1    = "#b8cece",
+}
+
+local var0 = {
+    shade0  = "#ebe5df",
+    shade1  = "#faf4ed",
+    shade2  = "#ebe0df",
+    shade3  = "#ebdfe4",
+    shade4  = "#bdbfc9",
+    shade5  = "#625c87",
+    shade6  = "#575279",
+    shade7  = "#4c4769",
+    accent0 = "#b4637a",
+    accent1 = "#d7827e",
+    accent2 = "#ea9d34",
+    accent3 = "#618774",
+    accent4 = "#56949f",
+    accent5 = "#286983",
+    accent6 = "#d685af",
+    accent7 = "#907aa9",
+    aux0    = "#d0d8d8",
+    aux1    = "#b8cece",
+}
+
 -- UI Shades
-local background = "#faf4ed"
-local foreground = "#575279"
-local comment    = "#9893a5"
-local gutter     = "#ebe0df"
-local menu       = "#d0d8d8"
-local winsep     = "#ebe5df"
-local selection  = "#d0d8d8"
+local background = var.shade1
+local foreground = var.shade6
+local comment    = var.shade4
+local gutter     = var.shade4
+local menu       = var.aux0
+local winsep     = var.shade2
+local selection  = var.aux0
 
 -- Colors
-local red    = "#b4637a"
-local orange = "#d7827e"
-local yellow = "#ea9d34"
-local green  = "#618774"
-local cyan   = "#56949f"
-local blue   = "#286983"
-local pink   = "#d685af"
-local purple = "#907aa9"
-
-local var = {
-    shade0  = background,
-    shade1  = comment,
-    shade2  = gutter,
-    shade3  = menu,
-    shade4  = "#a8a3b3",
-    shade5  = winsep,
-    shade6  = winsep,
-    shade7  = foreground,
-    accent1 = orange,
-    accent2 = yellow,
-    accent3 = green,
-    accent4 = cyan,
-    accent5 = blue,
-    accent6 = pink,
-    accent7 = purple,
-}
+local red    = var.accent0
+local orange = var.accent1
+local yellow = var.accent2
+local green  = var.accent3
+local cyan   = var.accent4
+local blue   = var.accent5
+local pink   = var.accent6
+local purple = var.accent7
 
 -- Whether to hide the tildes marking end of buffer
 local hide_bufend = vim.g.aks_hide_endofbuffer
