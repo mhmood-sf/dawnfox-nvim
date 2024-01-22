@@ -50,60 +50,62 @@ if vim.g.syntax_on ~= nil then
     vim.cmd "syntax reset"
 end
 
-vim.g.colors_name = "dawnfox"
+vim.g.colors_name = "lazyfox"
 
 -- Color palette
 
 -- S: 50, B: -10, T: 15
-local var = {
+local var_original = {
     shade0  = "#ebe5df",
-    shade1  = "#faf4ed",
+    shade1  = "#f6f2ee",
     shade2  = "#ebe0df",
     shade3  = "#ebdfe4",
     shade4  = "#bdbfc9",
     shade5  = "#625c87",
     shade6  = "#575279",
     shade7  = "#4c4769",
-    accent0 = "#D42850",
-    accent1 = "#E7554D",
-    accent2 = "#F2810F",
-    accent3 = "#3D925F",
-    accent4 = "#3D8EA0",
-    accent5 = "#245B78",
-    accent6 = "#E65292",
-    accent7 = "#8B40B3",
+    accent0 = "#d42850",
+    accent1 = "#e7554d",
+    accent2 = "#f2810f",
+    accent3 = "#3d925f",
+    accent4 = "#3d8ea0",
+    accent5 = "#245b78",
+    accent6 = "#e65292",
+    accent7 = "#8b40b3",
     aux0    = "#d0d8d8",
     aux1    = "#b8cece",
 }
 
-local var0 = {
-    shade0  = "#ebe5df",
-    shade1  = "#faf4ed",
-    shade2  = "#ebe0df",
-    shade3  = "#ebdfe4",
-    shade4  = "#bdbfc9",
-    shade5  = "#625c87",
-    shade6  = "#575279",
-    shade7  = "#4c4769",
-    accent0 = "#b4637a",
-    accent1 = "#d7827e",
-    accent2 = "#ea9d34",
-    accent3 = "#618774",
-    accent4 = "#56949f",
-    accent5 = "#286983",
-    accent6 = "#d685af",
-    accent7 = "#907aa9",
-    aux0    = "#d0d8d8",
-    aux1    = "#b8cece",
+local var_mod = {
+    shade0  = "#F6F2EE",
+    shade1  = "#EBE5DF",
+    shade2  = "#E5DBD1",
+    shade3  = "#BBAFB5",
+    shade4  = "#8B8FA2",
+    shade5  = "#625C87",
+    shade6  = "#4D4872",
+    shade7  = "#393263",
+    accent0 = "#E9214F",
+    accent1 = "#E79925",
+    accent2 = "#DDC805",
+    accent3 = "#07B34C",
+    accent4 = "#16A0BE",
+    accent5 = "#0C67A8",
+    accent6 = "#EC3484",
+    accent7 = "#9335C6",
+    aux0    = "#BEDEDE",
+    aux1    = "#E5D3DB",
 }
+
+local var = var_mod
 
 -- UI Shades
-local background = var.shade1
-local foreground = var.shade6
-local comment    = var.shade4
-local gutter     = var.shade4
-local menu       = var.aux0
-local winsep     = var.shade2
+local background = var.shade0
+local foreground = var.shade7
+local comment    = var.shade3
+local gutter     = var.shade3
+local menu       = var.aux1
+local winsep     = var.shade3
 local selection  = var.aux0
 
 -- Colors
@@ -187,15 +189,15 @@ hi("Todo",           { fg = purple })
 -- Highlighting Groups (descriptions and ordering from `:h highlight-groups`)
 hi("ColorColumn",  { bg = var.shade1 })
 hi("Conceal",      {})
-hi("Cursor",       { fg = background })
-hi("lCursor",      { fg = background })
+hi("Cursor",       { fg = background, bg = var.shade6 })
+hi("lCursor",      { fg = background, bg = foreground })
 hi("CursorIM",     {})
 hi("CursorColumn", { bg = var.shade1 })
 
 if vim.opt.diff:get() then
   hi("CursorLine", { gui = "underline" })
 else
-  hi("CursorLine", { bg = var.shade1 })
+  hi("CursorLine", { bg = background })
 end
 
 hi("Directory",  { fg = blue })
@@ -208,19 +210,19 @@ if hide_bufend then
     hi("EndOfBuffer", { fg = gutter })
 end
 
-hi("TermCursor",       { bg = blue })
+hi("TermCursor",       { bg = foreground, fg = background })
 hi("TermCursorNC",     { bg = comment })
 hi("ErrorMsg",         { fg = red })
 hi("WinSeparator",     { fg = winsep })
 hi("Folded",           { fg = comment })
 hi("FoldColumn",       {})
 hi("SignColumn",       {})
-hi("IncSearch",        { fg = yellow, bg = comment })
+hi("IncSearch",        { bg = selection })
 hi("Substitute",       { fg = background, bg = yellow })
 hi("LineNr",           { fg = gutter })
 hi("LineNrAbove",      {})
 hi("LineNrBelow",      {})
-hi("CursorLineNr",     { fg = var.shade4 })
+hi("CursorLineNr",     { fg = var.shade5 })
 hi("MatchParen",       { fg = blue, gui = "underline" })
 hi("ModeMsg",          { fg = pink })
 hi("MsgArea",          { fg = yellow })
@@ -238,7 +240,7 @@ hi("PmenuSbar",        { bg = menu })
 hi("PmenuThumb",       { bg = selection })
 hi("Question",         { fg = purple })
 hi("QuickFixLine",     { fg = background, bg = yellow })
-hi("Search",           { fg = background, bg = yellow })
+hi("Search",           { bg = selection })
 hi("SpecialKey",       { fg = var.shade4 })
 hi("SpellBad",         { fg = red, gui = "underline" })
 hi("SpellCap",         { fg = orange })
