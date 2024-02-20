@@ -104,7 +104,7 @@ local background = var.shade0
 local foreground = var.shade7
 local comment    = var.shade3
 local gutter     = var.shade3
-local menu       = var.aux1
+local menu       = var.shade1
 local winsep     = var.shade3
 local selection  = var.aux0
 
@@ -197,7 +197,7 @@ hi("CursorColumn", { bg = var.shade1 })
 if vim.opt.diff:get() then
   hi("CursorLine", { gui = "underline" })
 else
-  hi("CursorLine", { bg = background })
+  hi("CursorLine", { })
 end
 
 hi("Directory",  { fg = blue })
@@ -217,7 +217,7 @@ hi("WinSeparator",     { fg = winsep })
 hi("Folded",           { fg = comment })
 hi("FoldColumn",       {})
 hi("SignColumn",       {})
-hi("IncSearch",        { bg = selection })
+hi("IncSearch",        { bg = selection, gui = "underline" })
 hi("Substitute",       { fg = background, bg = yellow })
 hi("LineNr",           { fg = gutter })
 hi("LineNrAbove",      {})
@@ -240,7 +240,7 @@ hi("PmenuSbar",        { bg = menu })
 hi("PmenuThumb",       { bg = selection })
 hi("Question",         { fg = purple })
 hi("QuickFixLine",     { fg = background, bg = yellow })
-hi("Search",           { bg = selection })
+hi("Search",           { bg = selection, gui = "underline" })
 hi("SpecialKey",       { fg = var.shade4 })
 hi("SpellBad",         { fg = red, gui = "underline" })
 hi("SpellCap",         { fg = orange })
