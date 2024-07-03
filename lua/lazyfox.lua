@@ -54,29 +54,7 @@ vim.g.colors_name = "lazyfox"
 
 -- Color palette
 
--- S: 50, B: -10, T: 15
-local var_original = {
-    shade0  = "#ebe5df",
-    shade1  = "#f6f2ee",
-    shade2  = "#ebe0df",
-    shade3  = "#ebdfe4",
-    shade4  = "#bdbfc9",
-    shade5  = "#625c87",
-    shade6  = "#575279",
-    shade7  = "#4c4769",
-    accent0 = "#d42850",
-    accent1 = "#e7554d",
-    accent2 = "#f2810f",
-    accent3 = "#3d925f",
-    accent4 = "#3d8ea0",
-    accent5 = "#245b78",
-    accent6 = "#e65292",
-    accent7 = "#8b40b3",
-    aux0    = "#d0d8d8",
-    aux1    = "#b8cece",
-}
-
-local var_mod = {
+local palette = {
     shade0  = "#F6F2EE",
     shade1  = "#EBE5DF",
     shade2  = "#E5DBD1",
@@ -97,7 +75,7 @@ local var_mod = {
     aux1    = "#E5D3DB",
 }
 
-local var = var_mod
+local var = palette
 
 -- UI Shades
 local background = var.shade0
