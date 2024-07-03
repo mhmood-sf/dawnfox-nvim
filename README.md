@@ -1,4 +1,4 @@
-# Dawnfox
+# lazyfox
 
-Modified version of dawnfox from https://github.com/EdenEast/nightfox.nvim/.
+Light colorscheme, inspired by dawnfox from https://github.com/EdenEast/nightfox.nvim/.
 
