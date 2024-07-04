@@ -1,48 +1,3 @@
---[[
-
-For Reference:
-+------------------+
-|   ID    |  Name  |
-|---------+--------|
-| shade0  | bg0    |
-|---------+--------|
-| shade1  | bg1    |
-|---------+--------|
-| shade2  | bg2    |
-|---------+--------|
-| shade3  | bg3    |
-|---------+--------|
-| shade4  | fg0    |
-|---------+--------|
-| shade5  | fg1    |
-|---------+--------|
-| shade6  | fg2    |
-|---------+--------|
-| shade7  | fg3    |
-|---------+--------|
-| accent0 | red    |
-|---------+--------|
-| accent1 | orange |
-|---------+--------|
-| accent2 | yellow |
-|---------+--------|
-| accent3 | green  |
-|---------+--------|
-| accent4 | cyan   |
-|---------+--------|
-| accent5 | blue   |
-|---------+--------|
-| accent6 | pink   |
-|---------+--------|
-| accent7 | purple |
-|---------+--------|
-| aux0    | bluish |
-+---------+--------+
-| aux1    | bluish |
-+---------+--------+
-
---]]
-
 -- Clear and reset.
 vim.cmd "highlight clear"
 
@@ -53,8 +8,8 @@ end
 vim.g.colors_name = "lazyfox"
 
 -- Color palette
-
 local palette = {
+    -- Shades, going from lightest (0) to darkest (7).
     shade0  = "#F6F2EE",
     shade1  = "#EBE5DF",
     shade2  = "#E5DBD1",
@@ -63,14 +18,25 @@ local palette = {
     shade5  = "#625C87",
     shade6  = "#4D4872",
     shade7  = "#393263",
+
+    -- Red
     accent0 = "#E9214F",
+    -- Orange
     accent1 = "#E79925",
+    -- Yellow
     accent2 = "#DDC805",
+    -- Green
     accent3 = "#07B34C",
+    -- Cyan
     accent4 = "#16A0BE",
+    -- Blue
     accent5 = "#0C67A8",
+    -- Pink
     accent6 = "#EC3484",
+    -- Purple
     accent7 = "#9335C6",
+
+    -- Auxiliary colors.
     aux0    = "#BEDEDE",
     aux1    = "#E5D3DB",
 }
@@ -167,6 +133,7 @@ hi("Todo",           { fg = purple })
 -- Highlighting Groups (descriptions and ordering from `:h highlight-groups`)
 hi("ColorColumn",  { bg = var.shade1 })
 hi("Conceal",      {})
+hi("CurSearch",    { fg = background, bg = purple, gui = "underline" })
 hi("Cursor",       { fg = background, bg = var.shade6 })
 hi("lCursor",      { fg = background, bg = foreground })
 hi("CursorIM",     {})
@@ -179,10 +146,10 @@ else
 end
 
 hi("Directory",  { fg = blue })
-hi("DiffAdd",    { bg = green, fg = background })
-hi("DiffChange", { fg = orange, gui = "underline" })
-hi("DiffDelete", { bg = red, fg = background })
-hi("DiffText",   { bg = orange, fg = background })
+hi("DiffAdd",    { fg = green })
+hi("DiffChange", { fg = orange })
+hi("DiffDelete", { fg = red })
+hi("DiffText",   { fg = orange, gui = "underline" })
 
 if hide_bufend then
     hi("EndOfBuffer", { fg = gutter })
@@ -195,12 +162,14 @@ hi("WinSeparator",     { fg = winsep })
 hi("Folded",           { fg = comment })
 hi("FoldColumn",       {})
 hi("SignColumn",       {})
-hi("IncSearch",        { bg = selection, gui = "underline" })
+hi("IncSearch",        { fg = foreground, bg = purple })
 hi("Substitute",       { fg = background, bg = yellow })
 hi("LineNr",           { fg = gutter })
 hi("LineNrAbove",      {})
 hi("LineNrBelow",      {})
 hi("CursorLineNr",     { fg = var.shade5 })
+hi("CursorLineFold",   { fg = var.shade5 })
+hi("CursorLineSign",   { fg = var.shade5 })
 hi("MatchParen",       { fg = blue, gui = "underline" })
 hi("ModeMsg",          { fg = pink })
 hi("MsgArea",          { fg = orange })
@@ -214,11 +183,15 @@ hi("FloatTitle",       { fg = background, bg = purple })
 hi("NormalNC",         {})
 hi("Pmenu",            { fg = foreground, bg = menu })
 hi("PmenuSel",         { fg = background, bg = blue })
+hi("PmenuKind",        { fg = yellow,     bg = blue })
+hi("PmenuKindSel",     { fg = orange,     bg = blue })
+hi("PmenuExtra",       { fg = foreground, bg = background })
+hi("PmenuExtraSel",    { fg = foreground, bg = background })
 hi("PmenuSbar",        { bg = menu })
 hi("PmenuThumb",       { bg = selection })
 hi("Question",         { fg = purple })
 hi("QuickFixLine",     { fg = background, bg = orange })
-hi("Search",           { bg = selection, gui = "underline" })
+hi("Search",           { fg = background, bg = purple })
 hi("SpecialKey",       { fg = var.shade4 })
 hi("SpellBad",         { fg = red, gui = "underline" })
 hi("SpellCap",         { fg = orange })
@@ -235,6 +208,8 @@ hi("VisualNOS",        { bg = selection })
 hi("WarningMsg",       { fg = orange })
 hi("Whitespace",       { fg = gutter })
 hi("WildMenu",         { fg = background, bg = blue })
+hi("WinBar",           { fg = foreground, bg = background })
+hi("WinBarNC",         { fg = comment })
 
 -- Diagnostic Groups (descriptions and ordering from `:h vim.diagnostic`)
 hi("DiagnosticError",            { fg = red })
