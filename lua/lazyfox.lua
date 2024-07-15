@@ -63,10 +63,10 @@ local pink   = var.accent6
 local purple = var.accent7
 
 -- Whether to hide the tildes marking end of buffer
-local hide_bufend = vim.g.aks_hide_endofbuffer
+local hide_bufend = vim.g.lazyfox_hide_endofbuffer or false
 
 -- Whether to use italics or not
-local use_italics = vim.g.aks_use_italics
+local use_italics = vim.g.lazyfox_use_italics or true
 
 -- Util function to highlight groups.
 local function hi(group, style)
@@ -152,6 +152,8 @@ hi("DiffDelete", { fg = red })
 hi("DiffText",   { fg = orange, gui = "underline" })
 
 if hide_bufend then
+    hi("EndOfBuffer", { fg = background })
+else
     hi("EndOfBuffer", { fg = gutter })
 end
 
