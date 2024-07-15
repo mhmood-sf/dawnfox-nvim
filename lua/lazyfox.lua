@@ -41,26 +41,32 @@ local palette = {
     aux1    = "#E5D3DB",
 }
 
+-- There's no variants in lazyfox, but we'll
+-- set this anyways since `var` is shorter :P
 local var = palette
 
+-- Overrides
+local ovr = vim.g.aks_overrides or {}
+
+
 -- UI Shades
-local background = var.shade0
-local foreground = var.shade7
-local comment    = var.shade3
-local gutter     = var.shade3
-local menu       = var.shade1
-local winsep     = var.shade3
-local selection  = var.aux0
+local background = ovr.background or var.shade0
+local foreground = ovr.foreground or var.shade7
+local comment    = ovr.comment    or var.shade3
+local gutter     = ovr.gutter     or var.shade3
+local menu       = ovr.menu       or var.shade1
+local winsep     = ovr.winsep     or var.shade3
+local selection  = ovr.selection  or var.aux0
 
 -- Colors
-local red    = var.accent0
-local orange = var.accent1
-local yellow = var.accent2
-local green  = var.accent3
-local cyan   = var.accent4
-local blue   = var.accent5
-local pink   = var.accent6
-local purple = var.accent7
+local red    = ovr.red    or var.accent0
+local orange = ovr.orange or var.accent1
+local yellow = ovr.yellow or var.accent2
+local green  = ovr.green  or var.accent3
+local cyan   = ovr.cyan   or var.accent4
+local blue   = ovr.blue   or var.accent5
+local pink   = ovr.pink   or var.accent6
+local purple = ovr.purple or var.accent7
 
 -- Whether to hide the tildes marking end of buffer
 local hide_bufend = vim.g.lazyfox_hide_endofbuffer or false
