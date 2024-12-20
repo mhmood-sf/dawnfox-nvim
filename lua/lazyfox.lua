@@ -136,6 +136,10 @@ hi("Ignore",         {})
 hi("Error",          { fg = red })
 hi("Todo",           { fg = purple })
 
+hi("Added",          { fg = green })
+hi("Changed",        { fg = orange })
+hi("Removed",        { fg = red})
+
 -- Highlighting Groups (descriptions and ordering from `:h highlight-groups`)
 hi("ColorColumn",  { bg = var.shade1 })
 hi("Conceal",      {})
@@ -240,6 +244,22 @@ hi("DiagnosticSignError",        { fg = red })
 hi("DiagnosticSignWarn",         { fg = orange })
 hi("DiagnosticSignInfo",         { fg = blue })
 hi("DiagnosticSignHint",         { fg = cyan })
+
+-- Treesitter highlights (:h treesitter-highlight-groups)
+hi("@variable",    { fg = foreground })
+hi("@constant",    { fg = orange })
+hi("@module",      { fg = orange })
+hi("@string",      { fg = green })
+hi("@character",   { fg = cyan })
+hi("@boolean",     { fg = yellow })
+hi("@number",      { fg = yellow })
+hi("@type",        { fg = orange })
+hi("@attribute",   { fg = pink })
+hi("@property",    { fg = pink })
+hi("@function",    { fg = blue })
+hi("@constructor", { fg = blue })
+hi("@operator",    { fg = purple })
+hi("@keyword",     { fg = purple })
 
 -- Must appear at the end of the file to work around this oddity:
 -- https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
